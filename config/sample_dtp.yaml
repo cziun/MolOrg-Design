@@ -1,0 +1,31 @@
+data:
+  data: DTP
+  dir: './data'
+
+ckpt: MolOrg-Design_dtp
+
+sampler:
+  predictor: Reverse
+  corrector: Langevin
+  snr: 0.2
+  scale_eps: 0.9
+  n_steps: 1
+
+sample:
+  use_ema: False
+  noise_removal: True
+  probability_flow: False
+  eps: 1.0e-4
+  seed: 42
+
+generate:
+  add_edge_th: 0.5
+  atom_embedding_dim: 50
+  piece_embedding_dim: 100
+  pos_embedding_dim: 50
+  max_pos: 50
+  num_edge_type: 4
+  node_hidden_dim: 300
+  graph_embedding_dim: 400
+  property_embedding_dim: 100
+  lr: 1.0e-3
